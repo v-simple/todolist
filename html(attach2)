@@ -15,6 +15,7 @@ First repository project
     <!--div tag에 붙이기-->
     <!--deletebutton 제거하기-->
     <!--checkbox 줄긋기-->
+    <!-- addbtn 클릭시 input 공란으로 만들기-->
     
 
 
@@ -30,6 +31,7 @@ First repository project
       const addbtn = document.createElement('button')
       addbtn.textContent = '추가하기'
       addbtn.addEventListener('click', () => {
+        if( input.value !== ''){
         const div = document.createElement('div')
         document.body.appendChild(div)
 
@@ -46,6 +48,7 @@ First repository project
 
         const span = document.createElement('span')
         span.textContent = input.value
+        input.value = ''
         div.appendChild(span)
 
 
@@ -55,6 +58,7 @@ First repository project
           div.parentNode.removeChild(div)
         })
         div.appendChild(deletebox)
+      }
 
       })
       document.body.appendChild(addbtn)
